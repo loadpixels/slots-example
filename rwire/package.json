@@ -1,0 +1,62 @@
+{
+  "name": "rwire",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "serve": "vue-cli-service serve dev/serve.ts",
+    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
+    "lint": "vue-cli-service lint",
+    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
+    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
+  },
+  "main": "dist/rwire.ssr.js",
+  "module": "dist/rwire.esm.js",
+  "browser": "dist/rwire.esm.js",
+  "unpkg": "dist/rwire.min.js",
+  "files": [
+    "dist/*",
+    "rwire.d.ts",
+    "src/**/*.vue"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-typescript": "^7.12.7",
+    "@rollup/plugin-alias": "^3.1.1",
+    "@rollup/plugin-babel": "^5.2.2",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.1",
+    "@rollup/plugin-replace": "^2.3.4",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "@vue/cli-plugin-babel": "^4.5.10",
+    "@vue/cli-plugin-eslint": "^4.5.13",
+    "@vue/cli-plugin-typescript": "^4.5.10",
+    "@vue/cli-service": "^4.5.10",
+    "@vue/compiler-sfc": "^3.0.5",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.0.0",
+    "minimist": "^1.2.5",
+    "postcss": "^8.2.3",
+    "prettier": "^2.2.1",
+    "rollup": "^2.36.1",
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-vue": "^6.0.0",
+    "typescript": "^3.8.3",
+    "vue": "^3.0.5"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.5"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "sideEffects": false,
+  "types": "rwire.d.ts"
+}
